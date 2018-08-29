@@ -7,7 +7,7 @@ RUN apt-get update -yqq \
 	&& apt-get -q clean \
 	&& rm -rf /var/lib/apt/lists
 
-RUN gem install nokogiri -v "1.7.0.1"
+RUN gem install nokogiri -v "1.8.2"
 
 WORKDIR /usr/scr/app
 COPY Gemfile* ./
