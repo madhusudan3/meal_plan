@@ -11,7 +11,6 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -29,5 +28,9 @@ module MealPlan
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+        g.test_framework :minitest, spec: true
+    end
   end
 end
